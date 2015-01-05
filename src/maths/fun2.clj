@@ -1,4 +1,6 @@
 
+; http://stackoverflow.com/questions/9661535/performance-of-function-in-clojure-1-3
+
 (defn test-me [myfunc]
   (dotimes [_ 30]
     (time (def b (myfunc (double-array [1 2 3]) (double-array (range 10000)))))))
