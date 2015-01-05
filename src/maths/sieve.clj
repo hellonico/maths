@@ -10,7 +10,6 @@
         (doseq [q (range (* p p) n (* 2 p))] (.clear bs q))))
     bs))
 
-
 (sieve 100000)
 
 (defn primes
