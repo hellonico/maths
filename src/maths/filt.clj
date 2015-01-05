@@ -1,3 +1,4 @@
+(ns maths.filt)
 
 ; http://stackoverflow.com/questions/9661535/performance-of-function-in-clojure-1-3
 
@@ -55,4 +56,3 @@
                                                   (map * bb-vec)
                                                   (apply +))))))))
 (test-me filt-4)
-

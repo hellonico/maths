@@ -1,3 +1,5 @@
+(ns maths.sieve)
+
 (defn sieve [n]
   "Returns a BitSet with bits set for each prime up to n"
   (let [bs (new java.util.BitSet n)]

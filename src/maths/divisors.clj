@@ -1,3 +1,5 @@
+(ns maths.divisors)
+
 (defn has-all-divisors [^long num]
   (loop [d (long 2)]
     (if (zero? (mod num d))
