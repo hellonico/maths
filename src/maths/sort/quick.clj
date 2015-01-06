@@ -23,7 +23,7 @@
 
 (defn quick-sort
   ([^longs a]
-     (qsort a 0 (long (alength a))))
+     (quick-sort a 0 (long (alength a))))
   ([^longs a ^long lo ^long hi]
      (when
          (< (inc lo) hi)
@@ -31,6 +31,6 @@
              split (dec (apartition a pivot (inc lo) (dec hi)))]
          (when (> split lo)
            (swap a lo split))
-         (qsort a lo split)
-         (qsort a (inc split) hi)))
+         (quick-sort a lo split)
+         (quick-sort a (inc split) hi)))
      a))

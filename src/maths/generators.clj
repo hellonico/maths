@@ -4,9 +4,11 @@
   (double-array
    (take n (repeatedly #(rand m)))))
 
-(defn ^longs rand-long-array []
-  (let [rnd (java.util.Random.)]
-    (long-array (repeatedly 100000 #(.nextLong rnd)))))
+(defn ^longs rand-long-array
+  ([] (rand-long-array 100000))
+  ([n]
+   (let [rnd (java.util.Random.)]
+    (long-array (repeatedly n #(.nextLong rnd))))))
 
 (def ^:static alphabet "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 (defn make-random-string [len]
