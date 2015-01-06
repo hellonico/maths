@@ -1,4 +1,4 @@
-(ns maths.quicksort)
+(ns maths.sort.quick)
 
 (set! *unchecked-math* true)
 (set! *warn-on-reflection* true)
@@ -21,9 +21,9 @@
             (recur i (dec j)))))
       i)))
 
-(defn qsort
+(defn quick-sort
   ([^longs a]
-     (qsort a 0 (long (alength a))))
+     (quick-sort a 0 (long (alength a))))
   ([^longs a ^long lo ^long hi]
      (when
          (< (inc lo) hi)
@@ -31,18 +31,6 @@
              split (dec (apartition a pivot (inc lo) (dec hi)))]
          (when (> split lo)
            (swap a lo split))
-         (qsort a lo split)
-         (qsort a (inc split) hi)))
+         (quick-sort a lo split)
+         (quick-sort a (inc split) hi)))
      a))
-
-(defn ^longs rand-long-array []
-  (let [rnd (java.util.Random.)]
-    (long-array (repeatedly 100000 #(.nextLong rnd)))))
-
-;(comment
-  (dotimes [_ 10]
-    (let [as (rand-long-array)]
-      (time
-       (dotimes [_ 1]
-         (qsort as)))))
-;  )

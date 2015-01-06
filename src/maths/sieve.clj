@@ -10,8 +10,6 @@
         (doseq [q (range (* p p) n (* 2 p))] (.clear bs q))))
     bs))
 
-(sieve 100000)
-
 (defn primes
   []
   (letfn [(prime-help
@@ -34,10 +32,6 @@
                            q))
                          (inc q))))))]
     (prime-help {} 2)))
-
-(time (nth (primes) 10000))
-
-
 
 ;;; sieve
 
@@ -67,10 +61,3 @@
     (filter (complement nil?)
     (persistent! (sieve-step
       (clense (transient (vec (range x))) 2 4) 3)))))
-
-
-(time (last (prime-sieve 100000)))
-
-(use 'clojure.repl)
-
-(find-doc "bit-shift-left")

@@ -1,5 +1,4 @@
-(ns maths.cosine
-  (:use [criterium.core]))
+(ns maths.cosine)
 
 (set! *unchecked-math* true)
 (set! *warn-on-reflection* true)
@@ -17,13 +16,3 @@
                  (+ na (* a a))
                  (+ nb (* b b))
                  (dec i))))))
-
-(defn rand-double-arr [n m]
-  (double-array
-   (take n (repeatedly #(rand m)))))
-
-(def ma (rand-double-arr 200 10000))
-(def mb (rand-double-arr 200 10000))
-
-(quick-bench (cosine-similarity ma mb))
-; Execution time mean : 672.277530 ns

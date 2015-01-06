@@ -1,5 +1,4 @@
-(ns maths.collatz
-  (:use [criterium.core]))
+(ns maths.collatz)
 
 (set! *unchecked-math* true)
 
@@ -40,6 +39,18 @@
                (unchecked-inc (* 3 x)))
              (unchecked-inc acc)))))
 
- (dotimes [_ 30] (time (collatz-length-3 1000000)))
-
 ;  (time (dorun (loop [i 1] (when (< i 1000000) (collatz-length-2 i) (recur (inc i))))))
+
+
+; https://gist.github.com/leedm777/326665
+; http://en.wikipedia.org/wiki/Collatz_conjecture#Statement_of_the_problem
+
+(defn
+#^{:doc "Clojure code to compute a Collatz sequence."}
+  collatz [n]
+  (if (= n 1)
+  '(1)
+  (cons n
+  (collatz (if (= (mod n 2) 0)
+  (/ n 2)
+  (+ (* n 3) 1))))))

@@ -2,10 +2,6 @@
 
 ; http://stackoverflow.com/questions/9661535/performance-of-function-in-clojure-1-3
 
-(defn test-me [myfunc]
-  (dotimes [_ 30]
-    (time (def b (myfunc (double-array [1 2 3]) (double-array (range 10000)))))))
-
 (defn filt-1 [b-vec x-vec]
   (let [bc (count b-vec) xc (count x-vec)]
     (loop [n 0 sig x-vec result []]
@@ -17,7 +13,7 @@
                                                   (map * b-vec)
                                                   (apply +))))))))
 
-(test-me filt-1)
+;(test-me filt-1)
 
 (defn filt-2 [^doubles b-arr
               ^doubles x-arr]
@@ -30,7 +26,7 @@
            (aset result i (+ (aget result i) (* (aget x-arr (+ i j)) (aget b-arr j))))))
        result))
 
-(test-me filt-2)
+;(test-me filt-2)
 
 (defn filt-3 [b-vec x-vec]
   (let [bc (count b-vec) xc (count x-vec) bb-vec (reverse b-vec)]
@@ -42,7 +38,7 @@
                                                   (map * bb-vec)
                                                   (apply +))))))))
 
-(test-me filt-3)
+;(test-me filt-3)
 
 (set! *unchecked-math* true)
 
@@ -55,4 +51,4 @@
                                                   (take bc)
                                                   (map * bb-vec)
                                                   (apply +))))))))
-(test-me filt-4)
+;(test-me filt-4)
