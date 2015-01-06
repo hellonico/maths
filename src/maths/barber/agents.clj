@@ -1,4 +1,4 @@
-(ns maths.barber2)
+(ns maths.barber.async)
 
 ; http://www.bestinclass.dk/blog/scala-vs-clojure-round-2-concurrency
 

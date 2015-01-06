@@ -1,4 +1,4 @@
-(ns maths.baber
+(ns maths.barber.async
   (:require [clojure.core.async :as async]))
 
 ; barber problem solution using core.async
@@ -40,9 +40,9 @@
       customer-counter (async/reduce (fn [i c] (inc i)) 0 all-customers-channel)]
   (async/<!! (async/timeout 1000))
   (async/close! customers-channel)
-  (println 
-    "Haircuts for " 
-    (count (async/<!! saloon)) 
-    " customers out of " 
-    (async/<!! customer-counter) 
+  (println
+    "Haircuts for "
+    (count (async/<!! saloon))
+    " customers out of "
+    (async/<!! customer-counter)
     " customers")))

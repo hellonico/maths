@@ -1,6 +1,8 @@
-; http://stackoverflow.com/questions/14949705/clojure-performance-for-expensive-algorithms
+(ns maths.lcs)
 
-; algorithm to calculate the longest contiguous common subsequence (
+
+; http://stackoverflow.com/questions/14949705/clojure-performance-for-expensive-algorithms
+; algorithm to calculate the longest contiguous common subsequence
 
 (defn lcs
   [#^"[Ljava.lang.String;" a1 #^"[Ljava.lang.String;" a2]

@@ -25,6 +25,7 @@
 
 (defn random-numbers [size max]
    (take size (repeatedly #(rand-int max))))
+
 (defn rand-int-array [size max]
    (int-array (random-numbers size max)))
 

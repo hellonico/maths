@@ -6,5 +6,6 @@
   :profiles {
     :dev {:dependencies [[criterium "0.4.3"] [clj-stacktrace "0.2.4"]]}
   }
-  :dependencies [[org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                   [org.clojure/clojure "1.7.0-alpha4"]])
+  :dependencies [[org.clojure/data.priority-map "0.0.5"]
+                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [org.clojure/clojure "1.7.0-alpha4"]])

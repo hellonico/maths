@@ -1,4 +1,4 @@
-(ns maths.barber3
+(ns maths.barber.simple
   (:require [clojure.core.async :refer
     [put! dropping-buffer timeout chan go-loop <! chan ]]))
 
