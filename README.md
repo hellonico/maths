@@ -4,7 +4,9 @@ A Clojure library designed to ... well, that part is up to you.
 
 ## Usage
 
-FIXME
+More to come from ..
+
+http://rosettacode.org/mw/index.php?title=Special:Ask&offset=20&limit=20&q=[[Is+task%3A%3Atrue]]&p=mainlabel%3D%2Fformat%3Dbroadtable&sort=_MDAT&order=DESC
 
 ## License
 
