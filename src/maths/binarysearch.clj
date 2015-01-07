@@ -1,3 +1,4 @@
+(ns maths.binarysearch)
 
 ; http://stackoverflow.com/questions/8949837/binary-search-in-clojure-implementation-performance?rq=1
 
