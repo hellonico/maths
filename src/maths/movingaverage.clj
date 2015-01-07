@@ -64,6 +64,10 @@
         (recur (rest values) period (conj acc (/ (reduce + first) period)))
         acc))))
 
+; To get the Exponent,
+; take the number 2 and divide it by Days+1.
+; For example the Exponent for a 200 day moving average would be:
+; 2÷201 = 0.01
 
 ; implementation of an exponentially weighted moving-average function
 ; https://gist.github.com/MerelyAPseudonym/5273905
