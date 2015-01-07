@@ -1,4 +1,5 @@
-(ns maths.generators)
+(ns maths.generators
+  (:import [java.util Random]))
 
 (defn ^doubles rand-double-arr [n m]
   (double-array
@@ -19,7 +20,7 @@
 (defn rand-string [characters n]
   (->> (fn [] (rand-nth characters))
        repeatedly
-       (take n)
+       (take n)w
        (apply str)))
 ; (rand-string "nicolas" 10)
 
@@ -35,4 +36,7 @@
            (let [chars (map char (range 33 127))
                  password (take n (repeatedly #(rand-nth chars)))]
              (reduce str password))))
-; (fixed-length-password 15)
+
+(defn normals[size]
+  (let [r (Random.)]
+    (take size (repeatedly #(-> r .nextGaussian (* 0.5) (+ 1.0))))))

@@ -25,3 +25,5 @@
 (moving-average 5 lst)
 
 (ema 0.5 lst)
+
+(normals 1000)
