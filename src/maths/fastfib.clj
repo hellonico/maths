@@ -1,10 +1,13 @@
-(ns maths.fastfib)
+(ns maths.fastfib
+  (:require [clojure.core.reducers :as r]))
 
-(defn fib-0 [^long n]
+(defn fib-0
+  "Returns a non-lazy sequence of fibonacci numbers"
+  [^long n]
    (if (< n 2) n
     (loop [i 2 l '(1 1)]
      (if (= i n)
-     (first l)
+     l
      (recur
       (inc i)
       (cons
@@ -12,6 +15,7 @@
        l))))))
 
 (defn fib-2 [n]
+  "Returns the last computed fibonacci number"
   (letfn [(fib* [n]
             (if (zero? n)
               [0 1]
@@ -23,4 +27,34 @@
                   [d (+' c d)]))))]
     (first (fib* n))))
 
-; (def fib fib-2)
+; (fib-0 10)
+
+; http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Lazy_Fibonacci
+(def lazy-fib
+  "Lazy sequence of fibonacci numbers"
+  ((fn rfib [a b]
+     (lazy-seq (cons a (rfib b (+' a b)))))
+   0 1))
+
+(defn even-lazy-fib[n]
+  (filter even? (take n lazy-fib)))
+; (even-lazy-fib 100)
+
+; Project Euler Problem 2
+(defn pe2a
+  "Quite impressive performance."
+  ([] (pe2a 4000000))
+  ([^long n]
+    (r/fold +
+      (even-lazy-fib n))))
+
+(defn pe2a2
+
+  ([] (pe2a 4000000))
+  ([^long n]
+    (reduce +'
+      (even-lazy-fib n))))
+
+(defn pe2as[^String n] 
+  (println (pe2a (Integer/parseInt n))))
+; will probably blow up with out of memory

@@ -3,8 +3,12 @@
   ;  :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :jvm-opts ["-Xmx16g" "-server" "-XX:-UseGCOverheadLimit"]
   :profiles {
-    :dev {:dependencies [[criterium "0.4.3"] [clj-stacktrace "0.2.4"]]}
+    :dev {:dependencies [
+                         [org.clojure/tools.namespace "0.2.8"]
+                         [criterium "0.4.3"]
+                         [clj-stacktrace "0.2.4"]]}
   }
   :dependencies [; [org.apache.commons/commons-math3 "3.0"]
                  [org.clojure/data.priority-map "0.0.5"]
