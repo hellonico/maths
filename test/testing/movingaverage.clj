@@ -23,3 +23,5 @@
 (def moving-average moving-average-1)
 
 (moving-average 5 lst)
+
+(ema 0.5 lst)

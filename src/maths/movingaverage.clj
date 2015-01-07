@@ -63,3 +63,14 @@
       (if (= (count first) period)
         (recur (rest values) period (conj acc (/ (reduce + first) period)))
         acc))))
+
+
+; implementation of an exponentially weighted moving-average function
+; https://gist.github.com/MerelyAPseudonym/5273905
+(defn ema [f values]
+  (reductions
+   (fn [running v]
+    (let [one-minus-F (- 1 f)] ;naming intermediate results can help with the readability of non-associative operators.
+     (+ (* f v)
+     (* one-minus-F running))))
+  values))
