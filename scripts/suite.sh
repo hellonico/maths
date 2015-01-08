@@ -1,1 +1,1 @@
-lein midje :autotest testing.suite
+lein midje :autotest test/testing/suite.clj
