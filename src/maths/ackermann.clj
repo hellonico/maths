@@ -1,5 +1,7 @@
 (ns maths.ackermann)
 
+; dumb way of computing ackermann
+; blows really quickly
 (defn ackermann [m n]
   (println m ":" n)
   (cond (zero? m) (inc n)
@@ -8,6 +10,7 @@
 
 (ackermann 2 7)
 
+; almost, but doesn't give the proper results
 (defn ackermann-iterative[m n]
     (loop [n n stack (seq [m])]
       (let [m (first stack)

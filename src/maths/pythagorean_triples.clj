@@ -1,4 +1,4 @@
-(ns maths.pythagoreans-triples
+(ns maths.pythagorean-triples
   (:use [maths.gcd]))
 
 ; A Pythagorean triple is defined as three positive integers (a,b,c)

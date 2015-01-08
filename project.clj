@@ -5,7 +5,10 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jvm-opts ["-Xmx16g" "-server" "-XX:-UseGCOverheadLimit"]
   :profiles {
-    :dev {:dependencies [
+    :dev {
+          :plugins [[lein-midje "3.0.0"]]
+          :dependencies [
+                         [midje "1.6.3"]
                          [org.clojure/tools.namespace "0.2.8"]
                          [criterium "0.4.3"]
                          [clj-stacktrace "0.2.4"]]}
