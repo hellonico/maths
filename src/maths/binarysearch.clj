@@ -23,3 +23,5 @@
 (time (binary-search-clj [1 2 3 4 5 6] 3))
 
 (time (binary-search-java [1 2 3 4 5 6] 3))
+
+(binary-search-clj [7 2 3 4 5 6] 6)

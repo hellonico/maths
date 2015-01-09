@@ -12,5 +12,6 @@
         (zero? s)
         (recur (inc n) (rem (- (*' s s) 2) mp)))))))
 
- (mersenne? 2045)
-(filter mersenne? (filter prime? (range 0 5000)))
+; (mersenne? 2045)
+;(filter mersenne? (filter prime? (range 0 5000)))
+

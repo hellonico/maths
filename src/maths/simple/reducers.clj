@@ -22,3 +22,6 @@
    ; "Elapsed time: 23144.566634 msecs"
 
 ; (run-test)
+
+; (contains? [7 2 3 4 5 6] 6)
+
