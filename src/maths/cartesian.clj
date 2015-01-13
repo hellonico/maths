@@ -15,9 +15,6 @@
           more (cartesian-product (rest colls))]
       (cons x more))))
 
-; (cartesian-product '((a b c) (1 2 3) (black white)))
-
-
 
 ; concurrent cartesian-product
 
@@ -41,12 +38,12 @@
           f2 (future (for [x half2 yz s2xs3] (cons x yz)))]
       (concat @f1 @f2))))
 
-(time (last (doall (cartesian-product [(range 100) (range 100) (range 100)]))))
+; (time (last (doall (cartesian-product [(range 100) (range 100) (range 100)]))))
 ; "Elapsed time: 1363.283195 msecs"
 
-(time (last (doall (pcross (range 100) (range 100) (range 100)))))
+; (time (last (doall (pcross (range 100) (range 100) (range 100)))))
 ; "Elapsed time: 98.906513 msecs"
 
-(time (last (doall (cross (range 100) (range 100) (range 100)))))
+; (time (last (doall (cross (range 100) (range 100) (range 100)))))
 ; "Elapsed time: 1092.313364 msecs"
 

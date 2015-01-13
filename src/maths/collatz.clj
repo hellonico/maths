@@ -54,3 +54,34 @@
   (collatz (if (= (mod n 2) 0)
   (/ n 2)
   (+ (* n 3) 1))))))
+
+
+(defn hailstone
+  ([^long n]
+   (hailstone n '()))
+  ([n acc]
+    (lazy-seq
+     (cond
+      (= n 1) (reverse (conj acc 1))
+      (even? n) (hailstone (/ n 2) (conj acc n))
+      :else (hailstone (+ 1 (* 3 n)) (conj acc n))))))
+
+(defn hailstone-len
+  ([n] (hailstone-len n 0))
+  ([n acc]
+    (cond
+      (= n 1) (inc acc)
+      (even? n) (recur (bit-shift-left n 1) (inc acc))
+      :else (recur (+ 1 (* 3 n)) (inc acc)))))
+
+
+; (hailstone 27)
+(time (count (hailstone 30000)))
+(time (hailstone-len 30000))
+
+(defn longest-hailstone-seq[n]
+  (let [{max-i :num max-len :len}
+      (reduce #(max-key :len %1 %2)
+              (for [i (range 1 100000)]
+                {:num i, :len (count (hailstone i))}))]
+  (println "Maximum length" max-len "was found for hailstone(" max-i ")."))
