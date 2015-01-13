@@ -10,7 +10,7 @@
 
 (ackermann 2 7)
 
-; almost, but doesn't give the proper results
+; attempt at an iterative version, but doesn't give the proper results
 (defn ackermann-iterative[m n]
     (loop [n n stack (seq [m])]
       (let [m (first stack)
