@@ -47,8 +47,11 @@
                  :purple {:blue 7,   :orange 2},
                  :orange {:purple 2, :red    2}})
 
-(dijkstra demo-graph :red)
+(dijkstra demo-graph :orange)
 ;; => {:green 8, :blue 5, :purple 10, :red 0, :orange 8}
 
 (dijkstra demo-graph :red :purple)
 ;; => {:purple 10}
+
+; (use 'clojure.tools.trace)
+; (trace (dijkstra demo-graph :orange))
