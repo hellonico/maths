@@ -8,6 +8,7 @@
     :dev {
           :plugins [[lein-midje "3.0.0"]]
           :dependencies [
+                         [org.clojure/tools.trace "0.7.8"]
                          [midje "1.6.3"]
                          [org.clojure/tools.namespace "0.2.8"]
                          [criterium "0.4.3"]
