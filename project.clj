@@ -5,7 +5,9 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jvm-opts ["-Xmx16g" "-server" "-XX:-UseGCOverheadLimit"]
   :profiles {
-    :dev {:plugins [[lein-midje "3.0.0"]]
+    :dev {:plugins [
+                    [lein-gorilla "0.3.4"]
+                    [lein-midje "3.0.0"]]
           :dependencies [[org.clojure/tools.trace "0.7.8"]
                          [midje "1.6.3"]
                          [org.clojure/tools.namespace "0.2.8"]

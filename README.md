@@ -10,6 +10,15 @@ More to come from ..
 * http://en.wikipedia.org/wiki/List_of_algorithms
 * https://github.com/acmeism/RosettaCodeData/tree/master/Task
 
+* git@github.com:elben/k-means.git
+* http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2865495/
+
+* http://sentiment.christopherpotts.net/lexicons.html
+* https://github.com/damionjunk/sentimental
+
+* https://github.com/bmabey/clj-slope-one/blob/master/project.clj
+* http://shop.oreilly.com/product/0636920033950.do
+
 ## License
 
 Copyright © 2015 Nicolas Modrzyk
