@@ -14,3 +14,23 @@
      (read-string str)
      default)))
 
+(defmacro time-ns
+  [x expr]
+   `(let [start# (. System (nanoTime))
+        ret# (dotimes [y# ~x] ~expr)
+        end# (/ (double (- (. System (nanoTime)) start#)) ~x)]
+   end#))
+
+(defmacro time-ms
+  [x expr]
+   `(let [start# (. System (nanoTime))
+        ret# (dotimes [y# ~x] ~expr)
+        end# (/ (double (- (. System (nanoTime)) start#)) (* ~x 1000.0))]
+   end#))
+
+(defmacro time-s
+  [x expr]
+   `(let [start# (. System (nanoTime))
+        ret# (dotimes [y# ~x] ~expr)
+        end# (/ (double (- (. System (nanoTime)) start#)) (* ~x 1000000.0))]
+   end#))
