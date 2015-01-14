@@ -14,7 +14,11 @@
                          [criterium "0.4.3"]
                          [clj-stacktrace "0.2.4"]]}
   }
-  :dependencies [[org.clojure/data.priority-map "0.0.5"]
+  :dependencies [
+
+                 [hellonico/wujuko-common "0.1.3"]
+
+                 [org.clojure/data.priority-map "0.0.5"]
                  [net.mikera/core.matrix "0.32.1"]
                  [primitive-math "0.1.4"]
                  [org.clojure/data.priority-map "0.0.5"]
