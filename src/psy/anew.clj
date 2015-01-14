@@ -9,11 +9,6 @@
 ;; Affective norms for English words (ANEW):
 ;;      Instruction manual and affective ratings.
 ;; University of Florida: The Center for Research in Psychophysiology.
-;;
-;; Data file header:
-;;
-;; Description, Word No., Valence Mean, Valence SD, Arousal Mean,
-;; Arousal SD, Dominance Mean, Dominance SD, Word Frequency
 
 (def scores {:english (atom {})})
 
@@ -106,8 +101,6 @@
    }"
   [text]
   (let [anew-en (score-phrase (string-or-seq text) :english)
-        ;anew-es (score-phrase (string-or-seq text) :spanish)
-        ;anew-pt (score-phrase (string-or-seq text) :portuguese)
         maxscored (apply max
                          (map count
                               [(:words anew-en)]))]
@@ -129,3 +122,6 @@
   (load-lexicon "resources/ratings.csv.bz2")
   (score-phrase-langs "I really love my dog.")
   )
+
+;  (load-lexicon "resources/ratings.csv.bz2")
+;  (score-phrase-langs "I really love my dog.")
