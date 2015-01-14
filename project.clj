@@ -16,6 +16,8 @@
   }
   :dependencies [
 
+                 ;[tesser.all "0.1.0-SNAPSHOT"]
+
                  [hellonico/wujuko-common "0.1.3"]
 
                  [org.clojure/data.priority-map "0.0.5"]

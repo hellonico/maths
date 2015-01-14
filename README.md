@@ -17,7 +17,7 @@ More to come from ..
 * https://github.com/damionjunk/sentimental
 
 * https://github.com/bmabey/clj-slope-one/blob/master/project.clj
-* http://shop.oreilly.com/product/0636920033950.do
+* https://github.com/jmgimeno/okasaki-clojure
 
 ## License
 

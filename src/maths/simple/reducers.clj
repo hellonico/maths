@@ -25,3 +25,23 @@
 
 ; (contains? [7 2 3 4 5 6] 6)
 
+; http://adambard.com/blog/clojure-reducers-for-mortals/
+(defn reducer-test [nums]
+    (into [] (r/filter even? (r/map inc nums))))
+
+ (defn benchmark2 [f N times]
+    (let [nums (vec (range N))
+          start (java.lang.System/currentTimeMillis)]
+      (dotimes [n times]
+        (f nums))
+      (- (java.lang.System/currentTimeMillis) start)))
+
+  (benchmark2 reducer-test 1000000 10)
+
+  (defn plus [a b] (+ a b))
+  (defn plus+
+    ([] 0)
+    ([a b] (+ a b)))
+  (reduce plus [1 2 3 4]) ; => 10
+  (r/fold plus [1 2 3 4]) ; Throws an exception
+  (r/fold plus+ [1 2 3 4])
