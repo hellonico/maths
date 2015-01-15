@@ -1,4 +1,6 @@
 (ns maths.simple.reducers
+  (:use maths.utils)
+  (:use maths.generators)
   (:require [clojure.core.reducers :as r]))
 
 (def workers
@@ -29,19 +31,18 @@
 (defn reducer-test [nums]
     (into [] (r/filter even? (r/map inc nums))))
 
- (defn benchmark2 [f N times]
-    (let [nums (vec (range N))
-          start (java.lang.System/currentTimeMillis)]
-      (dotimes [n times]
-        (f nums))
-      (- (java.lang.System/currentTimeMillis) start)))
-
-  (benchmark2 reducer-test 1000000 10)
-
   (defn plus [a b] (+ a b))
   (defn plus+
     ([] 0)
-    ([a b] (+ a b)))
+    ([a b] (+' a b)))
   (reduce plus [1 2 3 4]) ; => 10
   (r/fold plus [1 2 3 4]) ; Throws an exception
   (r/fold plus+ [1 2 3 4])
+
+  (time-ms 1000000   (r/fold plus+ [1 2 3 4 5 6 7 8 10 9 17 7]))
+  (time-ms 1000000   (reduce plus [1 2 3 4]))
+  
+  (def longme (rand-long-array 1000))
+  ;(time-ms 10000 (r/fold plus+ longme))
+  ;(time-ms 10000 (reduce plus longme))
+  
