@@ -20,7 +20,7 @@
 (defn rand-string [characters n]
   (->> (fn [] (rand-nth characters))
        repeatedly
-       (take n)w
+       (take n)
        (apply str)))
 ; (rand-string "nicolas" 10)
 
