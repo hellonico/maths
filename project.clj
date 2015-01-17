@@ -19,7 +19,7 @@
                  ;[tesser.all "0.1.0-SNAPSHOT"]
 
                  [hellonico/wujuko-common "0.1.3"]
-
+                 [incanter/incanter-core "1.5.6"]
                  [org.clojure/data.priority-map "0.0.5"]
                  [net.mikera/core.matrix "0.32.1"]
                  [primitive-math "0.1.4"]
