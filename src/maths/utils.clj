@@ -25,8 +25,9 @@
   [x expr]
    `(let [start# (. System (nanoTime))
         ret# (dotimes [y# ~x] ~expr)
-        end# (/ (double (- (. System (nanoTime)) start#)) (* ~x 1000.0))]
-   end#))
+        ela# (double (- (. System (nanoTime)) start#))
+        avg# (/ ela  ~x 1000.0)]
+   avg#))
 
 (defmacro time-s
   [x expr]
