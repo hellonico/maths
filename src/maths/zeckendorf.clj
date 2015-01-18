@@ -2,6 +2,8 @@
   (:use [maths.utils])
   (:use [maths.fastfib]))
 
+; http://codereview.stackexchange.com/questions/61141/zeckendorf-numbers-the-clojure-way?rq=1
+
 (def fibs
   (lazy-cat [1 1] (map + fibs (rest fibs))))
 
