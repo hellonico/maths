@@ -10,6 +10,7 @@
     (apply + (map / (cycle [1 -1]) (take iterations odd-numbers))))))
 
 (defn calculate-pi2
+"same as above using reducers"
 [iterations]
 (let [odd-numbers (filter odd? (iterate inc 1))]
   (* 4.0
@@ -43,6 +44,7 @@
 ; and the circle would be approximately π/4.
 
 (defn calc-pi [iterations]
+  "using monte carlo simulation"
   (loop [x (rand) y (rand) in 0 total 1]
     (if (< total iterations)
       (recur (rand) (rand) (if (<= (+ (* x x) (* y y)) 1) (inc in) in) (inc total))

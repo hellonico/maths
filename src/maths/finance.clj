@@ -28,6 +28,11 @@
         (Math/exp (* (- riskfree) timeleft))
         (n (d2 spot timeleft strike riskfree sigma)))))
 
+
+(call 100.0 1.0 105.0 0.05 0.2)
+(put 100.0 1.0 105.0 0.05 0.2)
+
+
 (defn put
   "Returns the theoretic value of a European put option on the given underlying based on the Black-Scholes model.
   * spot - spot price of the underlying
