@@ -10,7 +10,11 @@
         (doseq [q (range (* p p) n (* 2 p))] (.clear bs q))))
     bs))
 
+(time (do (sieve 1e6) nil))
+; (sieve 1e6)
+
 (defn primes
+  "postponed primes"
   []
   (letfn [(prime-help
             [foo bar]
@@ -32,6 +36,13 @@
                            q))
                          (inc q))))))]
     (prime-help {} 2)))
+
+
+(first (primes))
+(second (primes))
+(nth (primes) 100)
+(take 5 (primes))
+(time (nth (primes) 10000))
 
 ;;; sieve
 
