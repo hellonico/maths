@@ -120,8 +120,7 @@
 
 (comment
   (load-lexicon "resources/ratings.csv.bz2")
-  (score-phrase-langs "I really love my dog.")
-  )
+  (score-phrase-langs "I really love my dog."))
 
 ;  (load-lexicon "resources/ratings.csv.bz2")
 ;  (score-phrase-langs "I really love my dog.")
