@@ -36,6 +36,15 @@
      (lazy-seq (cons a (rfib b (+' a b)))))
    0 1))
 
+(defn p2a [n]
+  (take n lazy-fib))
+(p2a 10)
+
+((fn[n]
+  (drop 1 (take (inc n) ((fn rfib [a b]
+     (lazy-seq (cons a (rfib b (+' a b)))))
+   0 1)))) 4)
+
 (defn even-lazy-fib[n]
   (filter even? (take n lazy-fib)))
 ; (even-lazy-fib 100)
@@ -55,6 +64,6 @@
     (reduce +'
       (even-lazy-fib n))))
 
-(defn pe2as[^String n] 
+(defn pe2as[^String n]
   (println (pe2a (Integer/parseInt n))))
 ; will probably blow up with out of memory
