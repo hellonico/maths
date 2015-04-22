@@ -14,4 +14,5 @@
 (def tak (memoize tak))
 
 ; the real thing
-(time (takeuchi_number 100))
+(time
+ (takeuchi_number 500))
