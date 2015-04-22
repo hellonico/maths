@@ -39,3 +39,19 @@
 (def s
   (partial x 2))
 (map s  (range 1 15))
+
+(defn delannoy [m n]
+  (if (or (zero? n) (zero? m))
+    1
+    (+
+     (delannoy (dec m) n)
+     (delannoy (dec m) (dec n))
+     (delannoy m (dec n)))))
+(time (delannoy 150 10))
+
+(defn delannoy2 [m n]
+  (reduce
+   +
+     (map
+      #(* (bc m %) (bc n k) (Math/pow 2 %))
+       (range 0 (min m n)))))
