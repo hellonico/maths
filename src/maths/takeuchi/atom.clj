@@ -1,6 +1,12 @@
-(def number (atom 0))
+(ns maths.takeuchi.atom)
+
+; first implementation
+; using an external atom
+; as the counter
 
 ; dosync not needed for atoms. doh. i forgot.
+
+(def number (atom 0))
 
 (defn tak [x y z]
   (if (<= x y)

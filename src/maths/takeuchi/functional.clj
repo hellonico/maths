@@ -1,4 +1,8 @@
-(ns maths.functional)
+(ns maths.takeuchi.functional)
+
+; define the counter as a parameter of the function
+; being free of side effects, we can memoize it
+; this is the best solution.
 
 (defn tak [c x y z]
   (if (<= x y)

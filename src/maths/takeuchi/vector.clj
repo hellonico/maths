@@ -1,4 +1,8 @@
-(ns maths.vector)
+(ns maths.takeuchi.vector)
+
+; second implementation having
+; a vector is used ?
+; not very efficient
 
 (defn tak [x y z ^longs counter]
   (if (<= x y)

@@ -1,4 +1,4 @@
-(defproject maths "0.1.0-SNAPSHOT"
+(defproject maths "0.2.0-SNAPSHOT"
   :description "Some, possibly fast, implementations of known algorithms"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
@@ -41,5 +41,4 @@
                  [net.mikera/vectorz-clj "0.28.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [org.clojure/clojure "1.7.0-beta1"]
-                 ;[org.clojure/clojure "1.7.0-alpha5"]
                  ])

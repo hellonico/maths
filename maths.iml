@@ -21,7 +21,7 @@
     <orderEntry type="library" name="Leiningen: midje:1.6.3" level="project" />
     <orderEntry type="library" name="Leiningen: net.mikera/core.matrix:0.32.1" level="project" />
     <orderEntry type="library" name="Leiningen: net.mikera/vectorz-clj:0.28.0" level="project" />
-    <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.7.0-alpha5" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/clojure:1.7.0-beta1" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/core.async:0.1.346.0-17112a-alpha" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.priority-map:0.0.5" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.namespace:0.2.8" level="project" />
