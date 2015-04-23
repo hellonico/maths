@@ -5,6 +5,8 @@
   :jvm-opts ["-Xmx12g" "-Xss5m" "-server" "-XX:-UseGCOverheadLimit"] ;"–XX:+UseG1GC"
   :profiles {
     :dev {:plugins [
+                    ; documentation
+                    [lein-marginalia "0.8.1-SNAPSHOT"]
                     ; interactive web REPL
                     [lein-gorilla "0.3.4"]
                     ; static code analysis
@@ -38,6 +40,6 @@
                  [org.clojure/data.priority-map "0.0.5"]
                  [net.mikera/vectorz-clj "0.28.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 ;[org.clojure/clojure "1.7.0-beta1"]
-                 [org.clojure/clojure "1.7.0-alpha5"]
+                 [org.clojure/clojure "1.7.0-beta1"]
+                 ;[org.clojure/clojure "1.7.0-alpha5"]
                  ])

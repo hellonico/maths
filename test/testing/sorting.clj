@@ -1,10 +1,10 @@
 (ns testing.sorting
   (:use clojure.pprint)
-  (:use [maths.sort.bubble])
-  (:use [maths.sort.heap])
-  (:use [maths.sort.bead])
-  (:use [maths.sort.quick])
-  (:use [maths.sort.sleep])
+  (:use [sort.bubble])
+  (:use [sort.heap])
+  (:use [sort.bead])
+  (:use [sort.quick])
+  (:use [sort.sleep])
   (:use [maths.generators]))
 
 (comment

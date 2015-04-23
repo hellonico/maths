@@ -1,14 +1,13 @@
 (def number (atom 0))
 
+; dosync not needed for atoms. doh. i forgot.
+
 (defn tak [x y z]
   (if (<= x y)
     y
     (do
-      ; dosync not needed for atoms. doh. i forgot.
-      ;dosync
        (swap! number inc)
-      ; )
-      (tak (tak (dec x) y z)
+       (tak (tak (dec x) y z)
            (tak (dec y) z x)
            (tak (dec z) x y)))))
 
