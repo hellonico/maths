@@ -84,4 +84,4 @@
       (reduce #(max-key :len %1 %2)
               (for [i (range 1 100000)]
                 {:num i, :len (count (hailstone i))}))]
-  (println "Maximum length" max-len "was found for hailstone(" max-i ")."))
+  (println "Maximum length" max-len "was found for hailstone(" max-i ").")))

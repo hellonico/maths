@@ -8,4 +8,5 @@
         :else (+ (cc amount (rest denominations))
                  (cc (- amount (first denominations)) denominations))))
 
- (cc 37 denomination-kind)
+(println
+  (cc 37 denomination-kind))
