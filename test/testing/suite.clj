@@ -11,58 +11,51 @@
    [maths.binaryperm :refer [binary-permutation]]
    [maths.recuradd :refer [recursive-sum]]))
 
-(deftest test-permutation
-  (is (= (count (binary-permutation 5)) 32)))
+(fact "Counting Binary Permutation"
+      (count (binary-permutation 5)) => 32
+      )
 
-(deftest test-recursive-sum
-  (is
-   (= 49999985000001
-    (recursive-sum (range 1 9999999) 0))))
+(fact "Recursive Sum"
+      (recursive-sum (range 1 9999999) 0) => 49999985000001)
 
-(deftest test-cartesian
-   (is
-    (=
-     (count
-      (cartesian-product
-       '((a b c) (1 2 3) (black white))) )
-      18))) ; 3x3x2
+(fact "Catersian Product"
+      (count
+        (cartesian-product
+          '((a b c) (1 2 3) (black white))) ) => 18 ; 3x3x2
+      )
 
-(deftest test-hofstadter
-  (is
-   (=
-    [1 1 2 3 3 4 5 5 6 6] (qfirst 10))
-   (=
-    502 (last (qfirst 1000)))))
-   (=
-    49798
-    (->> (qfirst 100000)
-         (partition 2 1)
-         (filter #(apply > %))
-         count))
+(facts "Hofstadter"
+      (qfirst 10) =>  [1 1 2 3 3 4 5 5 6 6]
+      (last (qfirst 1000)) => 502
+      (->> (qfirst 100000)
+           (partition 2 1)
+           (filter #(apply > %))
+           count) => 49798
+      )
 
-(deftest simple-ackermann
-  (is (= 17
-        (ackermann 2 7))))
-
-(fact "ackermann"
+(facts "Ackermann function"
       (ackermann 2 7) => 17
       (ackermann 2 8) => 19
       (ackermann 3 4) => 125)
+;
+;(tabular
+;  (facts "Ackermann"
+;         (ackermann ?x ?y) => ?expected)
+;    ?x ?y ?expected
+;    2 7 17
+;    2 8 19
+;    3 4 125)
 
-(tabular
-  (facts "Ackermann"
-         (ackermann ?x ?y) => ?expected)
-    ?x ?y ?expected
-    2 7 17
-    2 8 19
-    3 4 125)
+;(tabular
+;  (facts "Slicing bread"
+;         (min-number-of-slices ?x ?y) => ?expected)
+;                         ?x ?y ?expected
+;                               10 2 5
+;                               17 3 51)
 
-(tabular
-  (facts "Slicing bread"
-         (min-number-of-slices ?x ?y) => ?expected)
-                         ?x ?y ?expected
-                               10 2 5
-                               17 3 51)
+(facts "Slicing bread"
+       (min-number-of-slices 10 2) => 5
+       (min-number-of-slices 17 3) => 51)
 
 (facts "Caesar Encryption"
        (let [text "The Quick Brown Fox Jumps Over The Lazy Dog."
