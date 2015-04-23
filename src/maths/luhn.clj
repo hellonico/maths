@@ -6,6 +6,3 @@
         sum (reduce + (map #(int (+ (/ %1 10) (mod %1 10)))
                         (map * (reverse numbers) factors)))]
     (zero? (mod sum 10))))
-
-(doseq [n [49927398717 1234567812345678 1234567812345670]]
-  (println (luhn? n)))

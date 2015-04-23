@@ -1,6 +1,7 @@
 (ns unit.maths
   (:use midje.sweet)
   (:require
+  [maths.luhn :refer :all]
   [maths.takeuchi.functional :refer :all]
   [topcoder.crypt :refer :all]
   [maths.gcd :refer :all]
@@ -114,3 +115,8 @@
 
 (facts "Takeuchi numbers"
    (first (takeuchi_number 20)) => 1200320663197275)
+
+(facts "Luhn"
+  (luhn?       49927398717) => false
+  (luhn? 1234567812345678) => false
+  (luhn? 1234567812345670) => true)
