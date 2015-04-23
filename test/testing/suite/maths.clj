@@ -2,8 +2,9 @@
   (:use clojure.test)
   (:use midje.sweet)
   (:require
-   [maths.squareless :refer :all]
-    [maths.numbers :refer :all]
+  [maths.gcd :refer :all]
+  [maths.squareless :refer :all]
+  [maths.numbers :refer :all]
    [maths.ackermann :refer [ackermann]]
    [maths.breadslices :refer :all]
    [maths.caesar :refer :all]
@@ -99,3 +100,7 @@
   (sum-square-less-1000-1 1000) => 5456
   (sum-square-less-1000-2) => 5456
   (sum-square-less-1000-3) => 5456)
+
+(facts "GCD"
+      (gcd  5799 300) => 3
+      (gcd  4900 32) => 4)
