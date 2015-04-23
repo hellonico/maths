@@ -27,8 +27,6 @@
                :while (sorter stop-i)])
        arr)))
 
-; (time (bubble-sort-array (ArrayList. [10 9 8 7 6 5 4 3 2 1])))
-
 (defn- bubble-step
   "was-changed: whether any elements prior to the current first element
   were swapped;

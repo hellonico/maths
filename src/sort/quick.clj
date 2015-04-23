@@ -21,9 +21,9 @@
             (recur i (dec j)))))
       i)))
 
-(defn quick-sort
+(defn qsort0
   ([^longs a]
-     (quick-sort a 0 (long (alength a))))
+     (qsort0 0 (long (alength a))))
   ([^longs a ^long lo ^long hi]
      (when
          (< (inc lo) hi)
@@ -31,6 +31,31 @@
              split (dec (apartition a pivot (inc lo) (dec hi)))]
          (when (> split lo)
            (swap a lo split))
-         (quick-sort a lo split)
-         (quick-sort a (inc split) hi)))
+         (qsort0 a lo split)
+         (qsort0 a (inc split) hi)))
      a))
+
+; http://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Clojure
+
+(defn qsort1 [L]
+  (if (empty? L)
+      '()
+      (let [[pivot & L2] L]
+           (lazy-cat (qsort1 (for [y L2 :when (<  y pivot)] y))
+                     (list pivot)
+                     (qsort1 (for [y L2 :when (>= y pivot)] y))))))
+
+(defn qsort2 [[pvt & rs]]
+  (if pvt
+    `(~@(qsort2 (filter #(<  % pvt) rs))
+      ~pvt
+      ~@(qsort2 (filter #(>= % pvt) rs)))))
+
+(defn qsort3 [[pivot & xs]]
+  (when pivot
+    (let [smaller #(< % pivot)]
+      (lazy-cat (qsort3 (filter smaller xs))
+		[pivot]
+		(qsort3 (remove smaller xs))))))
+
+(def quick-sort qsort2)

@@ -1,7 +1,8 @@
-(ns testing.suite
+(ns testing.suite.maths
   (:use clojure.test)
   (:use midje.sweet)
   (:require
+   [maths.squareless :refer :all]
     [maths.numbers :refer :all]
    [maths.ackermann :refer [ackermann]]
    [maths.breadslices :refer :all]
@@ -93,3 +94,8 @@
        (map shroderhipparchus (range 1 15))
             => '(1.0 3.0 11.0 45.0 197.0 903.0 4279.0 20793.0 103049.0 518859.0 2646723.0 1.3648869E7 7.1039373E7 3.72693519E8)
        )
+
+(facts "Square less: 3 methods"
+  (sum-square-less-1000-1 1000) => 5456
+  (sum-square-less-1000-2) => 5456
+  (sum-square-less-1000-3) => 5456)

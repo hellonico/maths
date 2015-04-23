@@ -18,11 +18,10 @@
    1
    coll))
 
-
 ; we can demonstrate that the *infite* computation below
 ; actually finishes thanks to the reduced call above.
-(multiply-all
- (cycle [1 2 3 4 0]))
+;(multiply-all
+; (cycle [1 2 3 4 0]))
 
 ; the below crashes your REPL session
 ; it never ends.

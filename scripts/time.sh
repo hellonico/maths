@@ -1,1 +1,1 @@
-time lein midje testing.suite
+time lein midje testing.suite.*
