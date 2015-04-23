@@ -1,1 +1,1 @@
-lein midje :autotest test/testing/*
+lein midje :autotest test/unit/*

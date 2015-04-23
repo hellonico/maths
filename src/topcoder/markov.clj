@@ -1,4 +1,4 @@
-(ns maths.topcoder.markov)
+(ns topcoder.markov)
 
 (use '[clojure.set :only (union)])
 (use '[clojure.string :only (join split blank?)])

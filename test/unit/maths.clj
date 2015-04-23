@@ -1,7 +1,8 @@
-(ns testing.suite.maths
-  (:use clojure.test)
+(ns unit.maths
   (:use midje.sweet)
   (:require
+  [maths.takeuchi.functional :refer :all]
+  [topcoder.crypt :refer :all]
   [maths.gcd :refer :all]
   [maths.squareless :refer :all]
   [maths.numbers :refer :all]
@@ -104,3 +105,12 @@
 (facts "GCD"
       (gcd  5799 300) => 3
       (gcd  4900 32) => 4)
+
+(facts "Crypt"
+  (crypt [1 2 3]) => 12
+  (crypt [1000 999 998 997 996 995]) => 986074810223904000
+  (crypt [1 1 1 1]) => 2
+  (crypt [1 1 1 0]) => 0)
+
+(facts "Takeuchi numbers"
+   (first (takeuchi_number 20)) => 1200320663197275)

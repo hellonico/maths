@@ -1,4 +1,4 @@
-(ns testing.suite.graph
+(ns unit.graph
   (:use midje.sweet)
   (:require [maths.dijkstra :refer :all]
   ))

@@ -1,4 +1,4 @@
-(ns testing.suite.utils
+(ns unit.utils
   (:use clojure.test)
   (:use midje.sweet)
   (:require
