@@ -1,13 +1,11 @@
 (ns maths.catalan)
 
-(defn c [n]
+(defn catalan [n]
   (if (zero? n)
     1
     (*' (/ (bit-shift-left
            (inc (bit-shift-left n 1)) 1)
           (+ 2 n))
-       (c (dec n))
+       (catalan (dec n))
        )))
-(def c (memoize c))
-
-(map c (range 15))
+(def catalan (memoize catalan))

@@ -3,8 +3,13 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jvm-opts ["-Xmx12g" "-Xss5m" "-server" "-XX:-UseGCOverheadLimit"] ;"–XX:+UseG1GC"
+  ;:aliases {["suite" ["midje" ":autotest" "test/testing/suite.clj"]]}
   :profiles {
-    :dev {:plugins [
+    :dev {
+           :injections
+           [(require 'flare.clojure-test)
+            (flare.clojure-test/install!)]
+          :plugins [
                     ; documentation
                     [lein-marginalia "0.8.1-SNAPSHOT"]
                     ; interactive web REPL
@@ -16,7 +21,8 @@
           :dependencies [
                          ; tracing functions
                          [org.clojure/tools.trace "0.7.8"]
-                         ;
+                         ; testing
+                         [flare "0.2.8"]
                          [midje "1.6.3"]
                          ; (re-)loading namespace
                          [org.clojure/tools.namespace "0.2.8"]

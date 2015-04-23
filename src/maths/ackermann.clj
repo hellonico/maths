@@ -3,12 +3,10 @@
 ; dumb way of computing ackermann
 ; blows really quickly
 (defn ackermann [m n]
-  (println m ":" n)
+  ; (println m ":" n)
   (cond (zero? m) (inc n)
         (zero? n) (ackermann (dec m) 1)
         :else (ackermann (dec m) (ackermann m (dec n)))))
-
-(ackermann 2 7)
 
 ; attempt at an iterative version, but doesn't give the proper results
 (defn ackermann-iterative[m n]
@@ -26,7 +24,7 @@
             (recur nextn (flatten (conj [m (dec m)] newstack))))))))
 
 ; is 壊れてる
-(ackermann-iterative 2 17)
+; (ackermann-iterative 2 3)
 
 ;2:1:[]
 ;2:0:[1]

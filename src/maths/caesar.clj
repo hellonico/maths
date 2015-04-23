@@ -16,10 +16,3 @@
 
 (defn decrypt [offset text]
   (encrypt (- 26 offset) text))
-
-
-(let [text "The Quick Brown Fox Jumps Over The Lazy Dog."
-      enc (encrypt -1 text)]
-  (print "Original text:" text "\n")
-  (print "Encryption:" enc "\n")
-  (print "Decryption:" (decrypt -1 enc) "\n"))

@@ -76,8 +76,9 @@
 
 
 ; (hailstone 27)
-(time (count (hailstone 30000)))
-(time (hailstone-len 30000))
+; warning slow
+(time (count (hailstone 27)))
+(time (hailstone-len 27))
 
 (defn longest-hailstone-seq[n]
   (let [{max-i :num max-len :len}

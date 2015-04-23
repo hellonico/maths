@@ -12,5 +12,5 @@
       (doseq [line (line-seq rdr)]
         (.write wrt (str line "\n"))))))
 
-;(download-historical-quotes "goog")
-;(download-historical-quotes "aapl")
+(download-historical-quotes "goog")
+(download-historical-quotes "aapl")
