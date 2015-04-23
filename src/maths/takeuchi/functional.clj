@@ -1,4 +1,4 @@
-(ns maths.takeuchi2)
+(ns maths.functional)
 
 (defn tak [c x y z]
   (if (<= x y)

@@ -1,4 +1,4 @@
-(ns maths.takeuchi3)
+(ns maths.vector)
 
 (defn tak [x y z ^longs counter]
   (if (<= x y)
