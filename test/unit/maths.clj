@@ -74,7 +74,7 @@
 
 (facts "Catalan numbers"
   (map catalan (range 15)) =>
-      '(1 2 5N 14N 42N 132N 429N 1430N 4862N 16796N 58786N 208012N 742900N 2674440N 9694845N))
+      ' (1 1N 2N 5N 14N 42N 132N 429N 1430N 4862N 16796N 58786N 208012N 742900N 2674440N))
 
 (facts "Binomial Coefficient"
        (bc 10 3) => 120
@@ -173,3 +173,7 @@
 (fact "mersenne"
       (filter mersenne? (filter prime? (range 0 200))) => '(2 3 5 7 13 17 19))
 
+;(lobb-numbres 3 0) => (catalan 3)
+(fact "Lobb numbers"
+      (lobb-numbres 3 2) => (/ 7 6)
+      (map #(lobb-numbres 0 %) (range 0 10)) => (map catalan (range 0 10)))

@@ -1,20 +1,40 @@
 (ns maths.numbers)
 
+
+; shows how not to do it, blows stack trace
+;(defn bc-inefficient "binomial coefficient" [n k]
+;  (if (or (zero? k) (= n k))
+;    1
+;    (+' (bc (dec n) (dec k)) (bc (dec n) k))))
+
+;; Helper function to compute C(n,k) via forward recursion
+; http://en.wikipedia.org/wiki/Binomial_coefficient
+(defn binomial [n k]
+  (let[
+       binomial-iter (fn [n k i prev]
+      (if (>= i k)
+    prev
+    (recur n k (+ i 1) (/ (* (- n i) prev) (+ i 1))))
+       )]
+    (if (< k (-  n k))
+      (binomial-iter n k 0 1)
+      (binomial-iter n (- n k) 0 1))))
+(def bc (memoize binomial))
+
+
 (defn catalan [n]
-  (if (zero? n)
+  (if (<=  n 1)
     1
     (*' (/ (bit-shift-left
              (inc (bit-shift-left n 1)) 1)
            (+ 2 n))
         (catalan (dec n))
         )))
-(def catalan (memoize catalan))
-
-(defn bc "binomial coefficient" [n k]
-  (if (or (zero? k) (= n k))
-    1
-    (+' (bc (dec n) (dec k)) (bc (dec n) k))))
-(def bc (memoize bc))
+;(def catalan (memoize catalan))
+(defn catalan [n]
+  (* (/ 1 (inc n))
+     (bc (bit-shift-left n 1) n)
+  ))
 
 (defn narayana
   "narayana numbers,
@@ -74,4 +94,7 @@
     ))
 (def catalan3 (partial fuss-catalan 2 1))
 
-;(map #(fuss-catalan 2 1 %) (range 1 10))
+(defn lobb-numbres [m n]
+  (*
+    ( / (inc (bit-shift-left m 1)) (+ m n 1))
+        (bc (bit-shift-left n 1) (+ m n))))
