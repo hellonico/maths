@@ -10,9 +10,6 @@
         (doseq [q (range (* p p) n (* 2 p))] (.clear bs q))))
     bs))
 
-(time (do (sieve 1e6) nil))
-; (sieve 1e6)
-
 (defn primes
   "postponed primes"
   []
@@ -36,13 +33,6 @@
                            q))
                          (inc q))))))]
     (prime-help {} 2)))
-
-
-(first (primes))
-(second (primes))
-(nth (primes) 100)
-(take 5 (primes))
-(time (nth (primes) 10000))
 
 ;;; sieve
 
@@ -72,3 +62,10 @@
     (filter (complement nil?)
     (persistent! (sieve-step
       (clense (transient (vec (range x))) 2 4) 3)))))
+
+
+; simple prime
+(defn prime? [^long i]
+  (cond (< i 4)           (>= i 2)
+        (zero? (rem i 2)) false
+  :else (not-any? #(zero? (rem i %)) (range 3 (inc (Math/sqrt i))))))

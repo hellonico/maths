@@ -1,13 +1,10 @@
 (ns maths.zeckendorf
-  (:use [maths.utils])
   (:use [maths.fastfib]))
 
 ; http://codereview.stackexchange.com/questions/61141/zeckendorf-numbers-the-clojure-way?rq=1
+(def fibs fib-1) ; using the  mapcat version
 
-(def fibs
-  (lazy-cat [1 1] (map + fibs (rest fibs))))
-
-(defn z [n]
+(defn zeckendorf [n]
   (if (zero? n)
     "0"
     (let [ps (->> fibs (take-while #(<= % n)) rest reverse)
@@ -16,7 +13,3 @@
                   [(conj s 1) (- n p)]
                   [(conj s 0) n]))]
       (->> ps (reduce fz [[] n]) first (apply str)))))
-
-(defn -main[& args]
-  (doseq [n (range 0 (str->int (first args) 30))]
-    (println n (z n))))

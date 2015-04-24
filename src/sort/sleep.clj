@@ -6,10 +6,10 @@
 ; then emits the item. Items are then collected sequentially in time.
 
 (defn sleep-sort
-  ([l] (sleep-sort l 10))
+  ([l] (sleep-sort l 50))
   ([l wait]
    (let [c (chan (count l))]
     (doseq [i l]
-      (go (<! (timeout (* 10 i)))
+      (go (<! (timeout (* wait i)))
           (>! c i)))
     (<!! (async/into [] (async/take (count l) c))))))

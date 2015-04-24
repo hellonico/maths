@@ -1,7 +1,13 @@
 (ns unit.maths
   (:use midje.sweet)
   (:require
+  [maths.pascal :refer :all]
+  [maths.mercenne :refer :all]
+  [maths.sieve :refer :all]
+  [maths.zeckendorf :refer :all]
+  [maths.fastfib :refer :all]
   [maths.luhn :refer :all]
+  [maths.binarysearch :refer :all]
   [maths.maxes :refer :all]
   [maths.takeuchi.functional :refer :all]
   [topcoder.crypt :refer :all]
@@ -125,4 +131,45 @@
 (facts "Maxes"
       (let [ test1 (fn [x]  (+ (- (* x x x)) (* -2 x x ) (* 3 x) -14))]
   (maxes test1  [-0.2 -10 0.1] ) =>  [-10]))
+
+(facts "Binary search clj"
+       (binary-search-clj [1 2 3 4 5 6] 3) => 2
+       (binary-search-clj [1 2 3 4 5 6] 7) => nil
+       (binary-search-clj [1 2 3 4 5 6] 6) => 5)
+
+(facts "Binary search java"
+       (binary-search-java [1 2 3 4 5 6] 3) => 2)
+
+(facts "Fibonacci-0"
+        (fib-0 11) => '(89 55 34 21 13 8 5 3 2 1 1))
+
+(facts "Fibonacci-1"
+        (take 10 fib-1) => '(1 1 2 3 5 8 13 21 34 55))
+
+(facts "Fibonacci-2"
+        (fib-2 11) => 89)
+
+(facts "Lazy fib"
+       (take 10 lazy-fib) => '(0 1 1 2 3 5 8 13 21 34))
+
+(facts "Even Lazy fib"
+       (last (even-lazy-fib 100)) => 218922995834555169026)
+
+(facts "Zeckendorf"
+       (zeckendorf 14) => "100001")
+
+(fact  "Sieve"
+       (last (.toLongArray (sieve 1e6))) => 149533623451648 )
+
+(fact "Primes"
+      (first (primes)) => 2
+      (second (primes)) => 3
+      (nth (primes) 100) => 547
+      (nth (primes) 10000) => 104743)
+
+(fact "Pascal"
+      (pascal 3) => '([1] [1 1] [1 2 1]))
+
+(fact "mersenne"
+      (filter mersenne? (filter prime? (range 0 200))) => '(2 3 5 7 13 17 19))
 

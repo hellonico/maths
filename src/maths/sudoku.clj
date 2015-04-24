@@ -3,7 +3,6 @@
   (:use [clojure.core.logic])
   (:require [clojure.core.logic.fd :as fd]))
 
-
 (defn init-board [vars puzzle]
   (matche [vars puzzle]
           ([[] []]
@@ -12,7 +11,6 @@
              (init-board more-vars more-puzzle))
           ([[num . more-vars] [num . more-puzzle]]
              (init-board more-vars more-puzzle))))
-
 
 (defn solve [puzzle]
   (let [sdnum (fd/domain 1 2 3 4 5 6 7 8 9)
