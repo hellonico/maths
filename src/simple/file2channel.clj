@@ -1,9 +1,11 @@
 (ns simple.file2channel
-  (:require [clojure.core.async :refer :all])
+  (:require [clojure.core.async :refer :all]
+            [clojure.core.async :as async]
+            [clojure.java.io :as io])
   )
 
 (defn process-file [ch file]
-  (async/thread
+  (thread
    (with-open [input (io/reader file)]
      (doseq [line (line-seq input)]
        (async/>!! ch line)))))

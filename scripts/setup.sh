@@ -1,0 +1,1 @@
+export LEIN_JVM_OPTS=-XX:TieredStopAtLevel=1
