@@ -2,6 +2,7 @@
   (:use midje.sweet)
   (:require
   [maths.luhn :refer :all]
+  [maths.maxes :refer :all]
   [maths.takeuchi.functional :refer :all]
   [topcoder.crypt :refer :all]
   [maths.gcd :refer :all]
@@ -120,3 +121,8 @@
   (luhn?       49927398717) => false
   (luhn? 1234567812345678) => false
   (luhn? 1234567812345670) => true)
+
+(facts "Maxes"
+      (let [ test1 (fn [x]  (+ (- (* x x x)) (* -2 x x ) (* 3 x) -14))]
+  (maxes test1  [-0.2 -10 0.1] ) =>  [-10]))
+

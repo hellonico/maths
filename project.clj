@@ -42,6 +42,7 @@
                  [org.clojure/data.priority-map "0.0.5"]
                  [net.mikera/core.matrix "0.32.1"]
                  [primitive-math "0.1.4"]
+                 [org.clojure/core.logic "0.8.10"]
                  [net.mikera/vectorz-clj "0.28.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [org.clojure/clojure "1.7.0-beta1"]

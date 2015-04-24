@@ -6,13 +6,13 @@
    [simple.maps :refer :all])
   )
 
-(facts "Map Functions on maps vals"
+(facts "Apply a map function on maps vals"
   (map-function-on-map-vals {:a "test" :b "testing"} #(.toUpperCase %))  =>   {:b "TESTING", :a "TEST"})
 
 (facts "Remap"
     ((remap inc) {:foo 1}) => {:foo 2})
 
-(facts "Using Reduce"
+(facts "Using Reduce to update values in a map"
 (reduce
  (fn [a k] (update-in a k inc))
  {:a 1 :b 2 :c 3 :d 4} [[:a] [:c]]) =>  {:a 2, :b 2, :c 4, :d 4})
