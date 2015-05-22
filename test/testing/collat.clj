@@ -1,4 +1,4 @@
-(ns maths.collaty
+(ns maths.collat
   (:require [maths.collatz :refer :all])
   (:use [criterium.core]))
 

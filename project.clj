@@ -46,5 +46,5 @@
                  [org.clojure/core.logic "0.8.10"]
                  [net.mikera/vectorz-clj "0.29.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [org.clojure/clojure "1.7.0-beta1"]
+                 [org.clojure/clojure "1.7.0-RC1"]
                  ])
