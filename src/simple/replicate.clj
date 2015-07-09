@@ -5,3 +5,5 @@
 
 (doseq [x (list-replicate 3 [1 2 3])]
   (println x))
+
+; (mapcat (partial repeat 2)  [2])
