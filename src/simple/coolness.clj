@@ -96,3 +96,5 @@
 ; While Clojure is a bit more wordy than the ML family,
 ; and not as type safe,
 ; the simplicity of these features keep me coming back for more!
+
+(count ["2 3"])
