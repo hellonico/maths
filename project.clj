@@ -12,9 +12,10 @@
             (flare.clojure-test/install!)]
           :plugins [
                     ; documentation
+                    ;[lein-marginalia "0.8.1-SNAPSHOT"]
                     ; [lein-marginalia "0.8.1-SNAPSHOT"]
                     ; interactive web REPL
-                    [lein-gorilla "0.3.4"]
+                    ;[lein-gorilla "0.3.4"]
                     ; static code analysis
                     [lein-kibit "0.1.2"]
                     ; test framework

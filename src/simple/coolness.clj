@@ -45,6 +45,7 @@
 (derive ::dog ::hairy)
 (derive ::poodle ::dog)
 
+
 (isa? ::poodle ::dog)
 ;; => true
 (isa? ::poodle ::mammal)
