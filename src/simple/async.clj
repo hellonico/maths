@@ -36,3 +36,9 @@
   (print (<!! c))
     (print (<!! c))
   (close! c))
+
+(def f (future (Thread/sleep 10000) (println "done") 100))
+
+@f
+
+(def f2 (future (Thread/sleep 10000) (println "done") 100))

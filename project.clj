@@ -5,6 +5,7 @@
   :jvm-opts ["-Xmx12g" "-server" "-XX:-UseGCOverheadLimit""-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"] ;"–XX:+UseG1GC"
   ;:aliases {["suite" ["midje" ":autotest" "test/testing/suite.clj"]]}
   :bootclasspath true
+  :repositories [["hellonico.org" "http://nexus.hellonico.org/nexus/content/repositories/snapshots/"]]
   :profiles {
     :dev {
            :injections
@@ -46,6 +47,9 @@
                  [primitive-math "0.1.4"]
                  [org.clojure/core.logic "0.8.10"]
                  [net.mikera/vectorz-clj "0.29.0"]
-                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [org.clojure/clojure "1.7.0"]
+;                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [org.clojure/core.async "0.2.371"]
+;                  [org.clojure/clojure "1.8.0-master-SNAPSHOT"]
+                 [org.clojure/clojure "1.8.0-beta2"]
+                                  [org.clojure/clojure "1.7.0"]
                  ])
