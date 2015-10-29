@@ -5,7 +5,6 @@
 
 (use '[maths.generators])
 (def lst (random-numbers 1000 100))
-
 (load-test-me 10 moving-average-0 [3 lst])
 ; "Elapsed time: 0.003501 msecs"
 
@@ -20,10 +19,5 @@
 (load-test-me 10 moving-average-4 [3 lst])
 ; "Elapsed time: 2.422047 msecs"
 
-(def moving-average moving-average-1)
+(normals 5)
 
-(moving-average 5 lst)
-
-(ema 0.5 lst)
-
-(normals 1000)
