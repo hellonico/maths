@@ -7,4 +7,6 @@
     a
     (recur b (mod a b))))
 
-(gcd 49 7)
+(gcd 40 20)
+
+
