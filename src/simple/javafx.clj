@@ -9,4 +9,6 @@
                    (.setScene main-stage (VBox.))
                    (.show main-stage))))
 
-(LauncherImpl/launchApplication (class root) (into-array String ["hello"]))
+(LauncherImpl/launchApplication
+ (.getClass root)
+ (into-array String ["hello"]))
