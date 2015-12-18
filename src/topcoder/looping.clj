@@ -1,3 +1,5 @@
+(ns topcoder.looping)
+
 ; lessons to learn here is related to the :
 ; http://stackoverflow.com/questions/26954404/why-this-code-does-not-throw-stackoverflow-exception
 ; http://stackoverflow.com/questions/33091143/clojure-optimize-a-threaded-map-reduce/33091453#33091453
@@ -14,7 +16,6 @@
        float
        (format "%.2f")
        (str)))
-
 
 (defn series-sum-1
   [n]
@@ -36,5 +37,4 @@
 
 (series-sum-0 2500)
 (series-sum-1 2500)
-
 (series-sum-2 25000)

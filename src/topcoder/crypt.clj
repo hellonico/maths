@@ -7,3 +7,5 @@
     (map
      #(/ (*' (apply *' input) (inc %)) %)
      input)))))
+
+

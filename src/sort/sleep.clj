@@ -6,7 +6,7 @@
 ; then emits the item. Items are then collected sequentially in time.
 
 (defn sleep-sort
-  ([l] (sleep-sort l 50))
+  ([l] (sleep-sort l 100))
   ([l wait]
    (let [c (chan (count l))]
     (doseq [i l]

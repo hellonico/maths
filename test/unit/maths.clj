@@ -4,8 +4,8 @@
   [maths.pascal :refer :all]
   [maths.mercenne :refer :all]
   [maths.sieve :refer :all]
-  [maths.zeckendorf :refer :all]
   [maths.fastfib :refer :all]
+  [maths.zeckendorf :refer :all]
   [maths.luhn :refer :all]
   [maths.binarysearch :refer :all]
   [maths.maxes :refer :all]
@@ -18,6 +18,7 @@
    [maths.breadslices :refer :all]
    [maths.caesar :refer :all]
    [maths.hofstadter :refer [qfirst]]
+   [maths.movingaverage :refer :all]
    [maths.cartesian :refer[ cartesian-product cross pcross]]
    [maths.binaryperm :refer [binary-permutation]]
    [maths.recuradd :refer [recursive-sum]]))
@@ -177,3 +178,8 @@
 (fact "Lobb numbers"
       (lobb-numbres 3 2) => (/ 7 6)
       (map #(lobb-numbres 0 %) (range 0 10)) => (map catalan (range 0 10)))
+
+(fact "moving Average"
+      (let [ moving-average moving-average-1 lst '(6 2 5 6 5)  ]
+        (moving-average 2 lst) => '(4 7/2 11/2 11/2)
+        (ema 2 lst) => '(6 -2 12 0 10)))

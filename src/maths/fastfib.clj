@@ -41,3 +41,5 @@
 
 (defn even-lazy-fib[n]
   (filter even? (take n lazy-fib)))
+
+(even-lazy-fib 10)
