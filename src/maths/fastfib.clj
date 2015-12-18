@@ -35,11 +35,17 @@
 ; http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Lazy_Fibonacci
 (def lazy-fib
   "Lazy sequence of fibonacci numbers"
-  ((fn rfib [a b]
-     (lazy-seq (cons a (rfib b (+' a b)))))
+  (
+   (fn rfib [a b]
+     (println a b)
+     (lazy-seq (cons a (rfib b ('+ a b)))))
    0 1))
 
 (defn even-lazy-fib[n]
   (filter even? (take n lazy-fib)))
 
 (even-lazy-fib 10)
+
+;(take 10 (range 10))
+
+;(compile 'maths.fastfib)
