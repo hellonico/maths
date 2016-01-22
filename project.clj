@@ -47,7 +47,15 @@
                  [primitive-math "0.1.4"]
                  [org.clojure/core.logic "0.8.10"]
                  [net.mikera/vectorz-clj "0.29.0"]
+<<<<<<< HEAD
                  [org.clojure/clojure "1.8.0-RC4"]
                  [org.clojure/core.async "0.2.371"]
                 ; [org.clojure/clojure "1.7.0"]
+=======
+;                 [org.clojure/core.async "0.1.346.0-17112a-alpha"]
+                 [org.clojure/core.async "0.2.374"]
+                 ;[org.clojure/clojure "1.8.0-RC3"]
+;                [org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojure "1.8.0-master-SNAPSHOT"]
+>>>>>>> new
                  ])
